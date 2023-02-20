@@ -92,41 +92,36 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(`I've been clicked by Button ${e.target.id}`);
     let btnId = e.target.id;
     fetchUrl = `http://localhost:3000/toys/${btnId}`;
-    // let likes = e.paerentNode
-    console.log(e);
-    console.log(e.target.parentNode);
+    let likeNumber;
     let card = e.target.parentNode;
-    let likeText = card.querySelector('p').textContent;
-    let likeNumber = parseInt(likeText);
-    console.log(likeText);
-    console.log(likeNumber);
-    let newLikeNumber = likeNumber + 1;
-    console.log(newLikeNumber);
-    likeText = `${newLikeNumber} Likes`;
-    console.log(likeText);
-    card.querySelector('p').textContent = likeText;
-    console.log(card.querySelector('p').textContent);
+    let serverLikeAmountResponse;
 
-    let newLikeData = {
-      likes: newLikeNumber,
-    };
+    fetch(fetchUrl)
+      .then(res => res.json())
+        .then(object => {
+          likeNumber = object.likes + 1;
 
-    const configPatch = {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-      body: JSON.stringify(newLikeData),
-    };
-
-    fetch(fetchUrl, configPatch)
-      // .then(res => res.json())
-      //   .then(object => {
-      //     console.log(object)
-
-      //   })
-
-  
+          let newLikeData = {
+            likes: likeNumber,
+          };
+      
+          const configPatch = {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json",
+            },
+            body: JSON.stringify(newLikeData),
+          };
+      
+          console.log(likeNumber);
+          fetch(fetchUrl, configPatch)
+            .then(res => res.json())
+              .then(object => {
+                serverLikeAmountResponse = object.likes;
+                card.querySelector('p').textContent = `${serverLikeAmountResponse} Likes`;
+              })
+        })
   };
+  
 });
