@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 10
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "id": 3,
       "name": "Mr. Potato Head",
       "image": "https://vignette.wikia.nocookie.net/universe-of-smash-bros-lawl/images/d/d8/Mr-potato-head-toy-story.gif/revision/latest?cb=20151129131217",
-      "likes": 3
+      "likes": 5
     },
     {
       "id": 4,
@@ -46,13 +46,19 @@
       "id": 8,
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
-      "likes": 1
+      "likes": 9
     },
     {
       "name": "Bullseye",
       "image": "https://cdn-ssl.s7.disneystore.com/is/image/DisneyShopping/6101036512837?fmt=webp&qlt=70&wid=1536&hei=1536",
-      "likes": 0,
+      "likes": 10,
       "id": 9
+    },
+    {
+      "name": "Sid",
+      "image": "https://bbts1.azureedge.net/images/p/full/2020/10/cc4b4b94-f81e-44fb-bb74-887e53b561a2.jpg",
+      "likes": 13,
+      "id": 10
     }
   ]
 }
