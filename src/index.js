@@ -121,11 +121,11 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     fetch(fetchUrl, configPatch)
-      .then(res => res.json())
-        .then(object => {
-          console.log(object)
-          
-        })
+      // .then(res => res.json())
+      //   .then(object => {
+      //     console.log(object)
+
+      //   })
 
   
   };
